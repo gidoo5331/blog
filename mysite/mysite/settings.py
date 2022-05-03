@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =env('SECRET_KEY')
+# SECRET_KEY =env('SECRET_KEY')
+SECRET_KEY ='django-insecure-os7k-su6i78s_l^$f2huq%wi!jhzryztd8$!4auy&ofol2qx7k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -106,25 +107,44 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-
+# reactt-blog
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASS'),
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dtuuscvkakde5',
+        'USER': 'wbxzbswhgltwzb',
+        'PASSWORD': 'b392ecac9ce270035bb4cabc32586e83c5052afdc18e89fd82b7897cb7fc5d28',
+        'HOST': 'ec2-3-231-82-226.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': env('DATABASE_NAME'),
+#         'USER': env('DATABASE_USER'),
+#         'PASSWORD': env('DATABASE_PASS'),
+#         'HOST': 'localhost',
+#     }
+# }
 
 
 # EMAIL
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = env('EMAIL_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
+EMAIL_HOST_USER = 'gideonbempong533@gmail.com'
+EMAIL_HOST_PASSWORD = 'zklrhbxqyabwrgem'
 EMAIL_USE_TLS = True
+
+# EMAIL
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = env('EMAIL_USER')
+# EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
+# EMAIL_USE_TLS = True
 
 
 # Password validation
@@ -184,10 +204,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Amazon s3 storage
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_ACCESS_KEY_ID        = env('AWS_ACCESS_KEY')
-AWS_S3_SECRET_ACCESS_KEY    =env('AWS_SECRET_KEY')
-AWS_STORAGE_BUCKET_NAME     =env('AWS_BUCKET_NAME')
+AWS_S3_ACCESS_KEY_ID        = 'AKIAUZFYJNWK4XO2OELX'
+AWS_S3_SECRET_ACCESS_KEY    ='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'
+AWS_STORAGE_BUCKET_NAME     ='reactblogimages'
 AWS_QUERYSTRING_AUTH        = False
+
+# AWS_S3_ACCESS_KEY_ID        = env('AWS_ACCESS_KEY')
+# AWS_S3_SECRET_ACCESS_KEY    =env('AWS_SECRET_KEY')
+# AWS_STORAGE_BUCKET_NAME     =env('AWS_BUCKET_NAME')
+# AWS_QUERYSTRING_AUTH        = False
 
 # Custom User model
 AUTH_USER_MODEL = 'accounts.MyUser'
