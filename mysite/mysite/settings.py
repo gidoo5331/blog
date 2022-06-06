@@ -206,7 +206,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_ACCESS_KEY_ID        = 'AKIAUZFYJNWK4XO2OELX'
 AWS_S3_SECRET_ACCESS_KEY    ='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'
-AWS_STORAGE_BUCKET_NAME     ='reactblogimages'
+AWS_STORAGE_BUCKET_NAME     ='galup'
 AWS_QUERYSTRING_AUTH        = False
 
 # AWS_S3_ACCESS_KEY_ID        = env('AWS_ACCESS_KEY')
