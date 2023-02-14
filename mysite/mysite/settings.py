@@ -14,6 +14,7 @@ import django_heroku
 # import dj_database_url
 from decouple import config
 
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -107,16 +108,20 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-# reactt-blog
+# # reactt-blog
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'dtuuscvkakde5',
+#         'USER': 'wbxzbswhgltwzb',
+#         'PASSWORD': 'b392ecac9ce270035bb4cabc32586e83c5052afdc18e89fd82b7897cb7fc5d28',
+#         'HOST': 'ec2-3-231-82-226.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+# Render
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dtuuscvkakde5',
-        'USER': 'wbxzbswhgltwzb',
-        'PASSWORD': 'b392ecac9ce270035bb4cabc32586e83c5052afdc18e89fd82b7897cb7fc5d28',
-        'HOST': 'ec2-3-231-82-226.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse(env('DATABASE_URL'), conn_max_age=600),
 }
 
 # DATABASES = {
