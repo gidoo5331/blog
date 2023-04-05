@@ -199,13 +199,6 @@ AWS_QUERYSTRING_AUTH        = False
 # Custom User model
 AUTH_USER_MODEL = 'accounts.MyUser'
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "https://reactt-blog.herokuapp.com",
-#     "http://reactt-blog.herokuapp.com",
-#     "http://127.0.0.1:8000",
-# ]
-
 CORS_ALLOWED_ORIGINS=env('CORS_ALLOWED_ORIGINS').split(' ')
 
 # CORS_ORIGIN_ALLOW_ALL = True
