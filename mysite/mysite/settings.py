@@ -24,11 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY =env('SECRET_KEY')
-SECRET_KEY ='django-insecure-os7k-su6i78s_l^$f2huq%wi!jhzryztd8$!4auy&ofol2qx7k'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 # DEBUG = False
  
 # ALLOWED_HOSTS = ['*']
@@ -108,17 +107,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-# # reactt-blog
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'dtuuscvkakde5',
-#         'USER': 'wbxzbswhgltwzb',
-#         'PASSWORD': 'b392ecac9ce270035bb4cabc32586e83c5052afdc18e89fd82b7897cb7fc5d28',
-#         'HOST': 'ec2-3-231-82-226.compute-1.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
+
+
 # Render
 DATABASES = {
     'default': dj_database_url.parse(env('DATABASE_URL'), conn_max_age=600),
@@ -139,17 +129,9 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'gideonbempong533@gmail.com'
-EMAIL_HOST_PASSWORD = 'zklrhbxqyabwrgem'
+EMAIL_HOST_USER = env('EMAIL_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
 EMAIL_USE_TLS = True
-
-# EMAIL
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = env('EMAIL_USER')
-# EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
-# EMAIL_USE_TLS = True
 
 
 # Password validation
@@ -209,25 +191,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Amazon s3 storage
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_ACCESS_KEY_ID        = 'AKIAUZFYJNWK4XO2OELX'
-AWS_S3_SECRET_ACCESS_KEY    ='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'
-AWS_STORAGE_BUCKET_NAME     ='galup'
+AWS_S3_ACCESS_KEY_ID        = env('AWS_ACCESS_KEY')
+AWS_S3_SECRET_ACCESS_KEY    =env('AWS_SECRET_KEY')
+AWS_STORAGE_BUCKET_NAME     =env('AWS_BUCKET_NAME')
 AWS_QUERYSTRING_AUTH        = False
-
-# AWS_S3_ACCESS_KEY_ID        = env('AWS_ACCESS_KEY')
-# AWS_S3_SECRET_ACCESS_KEY    =env('AWS_SECRET_KEY')
-# AWS_STORAGE_BUCKET_NAME     =env('AWS_BUCKET_NAME')
-# AWS_QUERYSTRING_AUTH        = False
 
 # Custom User model
 AUTH_USER_MODEL = 'accounts.MyUser'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "https://reactt-blog.herokuapp.com",
-    "http://reactt-blog.herokuapp.com",
-    "https://blogg-react.onrender.com"
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "https://reactt-blog.herokuapp.com",
+#     "http://reactt-blog.herokuapp.com",
+#     "http://127.0.0.1:8000",
+# ]
+
+CORS_ALLOWED_ORIGINS=env('CORS_ALLOWED_ORIGINS').split(' ')
 
 # CORS_ORIGIN_ALLOW_ALL = True
 
