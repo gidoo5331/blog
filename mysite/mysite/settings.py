@@ -190,11 +190,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Amazon s3 storage
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_ACCESS_KEY_ID        = env('AWS_ACCESS_KEY')
-AWS_S3_SECRET_ACCESS_KEY    =env('AWS_SECRET_KEY')
-AWS_STORAGE_BUCKET_NAME     =env('AWS_BUCKET_NAME')
-AWS_QUERYSTRING_AUTH        = False
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_ACCESS_KEY_ID        = env('AWS_ACCESS_KEY')
+# AWS_S3_SECRET_ACCESS_KEY    =env('AWS_SECRET_KEY')
+# AWS_STORAGE_BUCKET_NAME     =env('AWS_BUCKET_NAME')
+# AWS_QUERYSTRING_AUTH        = False
 
 # Custom User model
 AUTH_USER_MODEL = 'accounts.MyUser'
