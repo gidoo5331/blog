@@ -10,7 +10,7 @@ env = environ.Env()
 environ.Env.read_env()
 
 # Heroku
-import django_heroku
+# import django_heroku
 # import dj_database_url
 from decouple import config
 
@@ -28,7 +28,6 @@ SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
-# DEBUG = False
  
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = []
@@ -127,8 +126,8 @@ DATABASES = {
 
 # EMAIL
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_HOST =  env('EMAIL_HOST'),
+EMAIL_PORT =  env('EMAIL_PORT')
 EMAIL_HOST_USER = env('EMAIL_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
 EMAIL_USE_TLS = True
@@ -283,4 +282,4 @@ SIMPLE_JWT = {
 
 }
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
