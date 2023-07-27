@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Render
 DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'), conn_max_age=600),
+    'default': dj_database_url.parse(env('DATABASE_URL')),
 }
 
 # DATABASES = {
