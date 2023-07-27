@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import react
+# from .views import react
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r"^$", react),
-    re_path(r"^(?!admin)(?!api)(?!summernote)(?!auth)(?!api-auth)(?:.*)/?$", react),
+    # re_path(r"^$", react),
+    # re_path(r"^(?!admin)(?!api)(?!summernote)(?!auth)(?!api-auth)(?:.*)/?$", react),
 
     # Django summer note
     path('summernote/', include('django_summernote.urls')),
