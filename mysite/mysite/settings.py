@@ -110,19 +110,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 # Render
-# DATABASES = {
-#     'default': dj_database_url.parse(env('DATABASE_URL')),
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASS'),
-        'HOST': env('DATABASE_HOST'),
-    }
+    'default': dj_database_url.parse(env('DATABASE_URL')),
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': env('DATABASE_NAME'),
+#         'USER': env('DATABASE_USER'),
+#         'PASSWORD': env('DATABASE_PASS'),
+#         'HOST': env('DATABASE_HOST'),
+#     }
+# }
 
 
 # EMAIL
