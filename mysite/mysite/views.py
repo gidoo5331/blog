@@ -11,7 +11,7 @@ import os
 def react(request):
     return render(request, "index.html")
 
-# def react(request):
+# def reactApp(request):
 #     context = { }
 #     return render(request, "index.html", context)
 
